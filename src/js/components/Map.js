@@ -1,4 +1,4 @@
-class MapManager {
+export default class Map {
   constructor() {
     this.map = {};
     this.home = {};
@@ -13,13 +13,17 @@ class MapManager {
     });
     // Initialize pins from existing addresses
     this.setPins();
-    
+
     // Display pins on the map once it has fully loaded
-    google.maps.event.addListenerOnce(this.map, 'tilesloaded', this.displayPins(this.map));
+    google.maps.event.addListenerOnce(
+      this.map,
+      'tilesloaded',
+      this.displayPins(this.map)
+    );
   }
   moveToLocation(address) {
     const center = new google.maps.LatLng({
-      lat: address.lat, 
+      lat: address.lat,
       lng: address.long
     });
     this.map.panTo(center);
@@ -32,15 +36,14 @@ class MapManager {
       homeCoords = {
         lat: this.addresses[0].lat,
         lng: this.addresses[0].long
-      }
-    }
-    else {
+      };
+    } else {
       homeCoords = {
         lat: 30.285991,
         lng: -97.7352087
-      }
+      };
     }
-    // Sets home coordinates as Google LatLng object which is later used in 
+    // Sets home coordinates as Google LatLng object which is later used in
     // initMap to center it on that location
     this.home = new google.maps.LatLng(homeCoords);
     return this;
@@ -53,9 +56,11 @@ class MapManager {
           lat: address.lat,
           lng: address.long
         });
-        this.pins.push(new google.maps.Marker({
-          position: latLang
-        }));
+        this.pins.push(
+          new google.maps.Marker({
+            position: latLang
+          })
+        );
       });
     }
     return this;
@@ -70,5 +75,3 @@ class MapManager {
     return this;
   }
 }
-
-const mapManager = new MapManager();

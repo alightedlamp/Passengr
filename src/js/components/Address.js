@@ -4,7 +4,7 @@
 // 2. Making an API call to Google's Geocoding API to also store that address' lat/long values
 // 3. Storing the address in the user's localStorage to be used by the application
 
-class AddressManager {
+export default class Address {
   saveAddress(addressString, label, isHome, isEdit, isEditIndex) {
     let addressParam = addressString.replace(/ /g, '+');
     let APIURL =
@@ -97,9 +97,7 @@ class AddressManager {
                 <div class="address">
                   <div>${address}</div>
                   <div>
-                  <div class="nearbyRight"><button data-target="nearby-${
-                    index
-                  }" class="btn modal-trigger">What's Nearby?</button></div>
+                  <div class="nearbyRight"><button data-target="nearby-${index}" class="btn modal-trigger">What's Nearby?</button></div>
                   </div>
                 </div>
                 <div id="nearby-${index}" class="modal bottom-sheet">
@@ -212,5 +210,3 @@ class AddressManager {
     });
   }
 }
-
-const addressManager = new AddressManager();

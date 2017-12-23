@@ -1,10 +1,3 @@
-# Project 1
+# Passengr
 
-Shared repository for Coding Bootcamp October '17 - Part-time  Project 1.
-
-## Team Members
-Philip Harrell\
-Ryan Lee\
-Cecil Habermacher\
-Jon Chan\
-Daniel Sullivan
+Passengr is an app that acts as a travel companion, keeping you up to date with current weather, travel times from your home location, and helps you find new locations along your routes that may be worth trying out.

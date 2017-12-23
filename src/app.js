@@ -1,3 +1,13 @@
+import Address from './js/components/Address';
+import Map from './js/components/Map';
+import User from './js/components/User';
+import { config, GOOGLE_MAPS_KEY } from './config';
+
+// Initialize components
+const addressManager = new Address();
+const mapManager = new Map();
+const userManager = new User();
+
 // Init database and user
 firebase.initializeApp(config);
 const database = firebase.database();

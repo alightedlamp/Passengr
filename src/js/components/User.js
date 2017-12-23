@@ -1,4 +1,4 @@
-class UserManager {
+export default class Map {
   constructor() {
     this.user = {};
   }
@@ -73,5 +73,3 @@ class UserManager {
       });
   }
 }
-
-const userManager = new UserManager();
