@@ -1,7 +1,21 @@
 html,
 body {
   box-sizing: border-box;
+  height: 100%;
 }
-h1.lh-title {
+h1#app-title {
   text-transform: uppercase;
+}
+.main-app {
+  min-height: calc(100vh - 100px);
+}
+.footer {
+  min-height: 100px;
+}
+#map,
+.map-container {
+  min-height: calc(100vh - 225px);
+}
+#map-container {
+  position: relative;
 }

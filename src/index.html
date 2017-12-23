@@ -12,7 +12,7 @@
 <body>
   <div class="main-app sans-serif">
     <header id="pageHeader" class="bg-red ph4 pv2 flex justify-between items-center">
-      <h1 class="f1 lh-title near-white">Passengr</h1>
+      <h1 class="f1 lh-title near-white" id="app-title">Passengr</h1>
       <div class="ph3 v-mid" id="user-login">
         <a class="f6 link dim ba bw2 ph3 pv2 mb2 dib near-white" href="#0">Sign Up</a>
         <a class="f6 link dim ba bw2 b--dark-red ph3 pv2 mb2 dib bg-dark-red near-white" href="#0">Login</a>
@@ -27,8 +27,8 @@
     <!-- Main app content -->
     <div class="app">
       <section id="top-panel" class="bg-near-white dark-red cf">
-        <div class="fl w-60">
-          <div id="map" style="height:600px;"></div>
+        <div class="fl w-60 map-container shadow-4">
+          <div id="map"></div>
         </div>
         <div class="fl w-40 pa4 cf">
           <div id="weather"></div>
@@ -45,10 +45,10 @@
         </div>
       </section>
     </div>
-    <footer class="pa4 bg-near-black red">
-      <p>Footer content here</p>
-    </footer>
   </div>
+  <footer class="pa4 bg-near-black red footer sans-serif">
+    <p>Footer content here</p>
+  </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
   <script type="text/javascript" src="app.js"></script>

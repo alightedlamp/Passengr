@@ -39,7 +39,7 @@ export default class Address {
       .child(`${userManager.user.uid}`)
       .update({ addresses: mapManager.addresses });
   }
-  // Takes the result from the Google mapManagers Geocoder API and stores it in Firebase
+  // Takes the result from the Google Maps Geocoder API and stores it in Firebase
   storeAddress(object, placelabel, isHome) {
     // If the user has selected the "Home" checkbox, this is added to the BEGINNING of the array
     if (isHome) {
