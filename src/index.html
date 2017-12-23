@@ -1,161 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>Passengr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
   <link rel="icon" href="images/favicon.ico" sizes="16x16" type="image/png">
 </head>
 
 <body>
-  <header id="pageHeader">
-    <div>
-      <h1>Passengr</h1>
+  <div class="main-app sans-serif">
+    <header id="pageHeader" class="bg-red ph4 pv2 flex justify-between items-center">
+      <h1 class="f1 lh-title near-white">Passengr</h1>
+      <div class="ph3 v-mid" id="user-login">
+        <a class="f6 link dim ba bw2 ph3 pv2 mb2 dib near-white" href="#0">Sign Up</a>
+        <a class="f6 link dim ba bw2 b--dark-red ph3 pv2 mb2 dib bg-dark-red near-white" href="#0">Login</a>
+      </div>
+    </header>
+
+    <!-- Landing page -->
+    <div class="landing-page">
+
     </div>
-    <div id="user-login">
-      <a class="waves-effect waves-light btn modal-trigger blue" href="#signup-modal">Sign Up</a>
-      <a class="waves-effect waves-light btn modal-trigger blue" href="#login-modal">Login</a>
-    </div>
-  </header>
-  <section id="top-panel" class="row">
-    <div class="col s7">
-      <div id="map" class="z-depth-4" style="height:600px;"></div>
-    </div>
-    <div class="col s5">
-      <div id="weather"></div>
-      <div class="row">
-        <div class="col s12" id="itemDetails">
-          <ul class="collapsible" data-collapsible="expandable" id="searchDetails">
-            <li>
-              <div class="collapsible-header">
-                <i class="material-icons">home</i>Add Address Below</div>
-              <div class="collapsible-body">
-                <span></span>
+
+    <!-- Main app content -->
+    <div class="app">
+      <section id="top-panel" class="bg-near-white dark-red cf">
+        <div class="fl w-60">
+          <div id="map" style="height:600px;"></div>
+        </div>
+        <div class="fl w-40 pa4 cf">
+          <div id="weather"></div>
+          <div class="row">
+            <div id="itemDetails">
+              <div>
+                Add Address Below
               </div>
-            </li>
-          </ul>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <a class="waves-effect waves-light btn modal-trigger blue" href="#modal1">Add</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bottom panel -->
-  <section id="bottom-panel">
-    <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content">
-        <h4>Add an address </h4>
-        <div id="locationField">
-          <input id="autocomplete" placeholder="Enter the address" type="text"></input>
-        </div>
-        <div>
-          <input type="text" id="placelabel" placeholder="Enter a label for the place"></input>
-        </div>
-        <div>
-          <input type="checkbox" class="filled-in" id="isHome" />
-          <label for="isHome" class="black-text">Is this your home address?</label>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat" id="submitAddress">Add</a>
-        </div>
-      </div>
-    </div>
-    <div id="modal2" class="modal bottom-sheet">
-      <div class="modal-content">
-        <h4>Edit Address </h4>
-        <div id="locationFieldEdit">
-          <input id="autocompleteEdit" placeholder="Enter the address" type="text"></input>
-        </div>
-        <div>
-          <input type="text" id="placelabelEdit" placeholder="Enter a label for the place"></input>
-        </div>
-        <div>
-          <input type="checkbox" class="filled-in" id="isHomeEdit" />
-          <label for="isHomeEdit" class="black-text">Is this your home address?</label>
-        </div>
-        <div id="invisibleIndexField">
-          <input type="text" id="addressIndex"></input>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat" id="editButton">Save</a>
-        </div>
-      </div>
-    </div>
-    <!-- This is the "error" modal  -->
-    <div id="modal99" class="modal">
-      <div class="modal-content">
-        <p>You need to enter both an address and a label.</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-      </div>
-    </div>
-    <!-- End "error" modal -->
-    <div id="signup-modal" class="modal">
-      <div class="modal-content">
-        <h4>Sign Up</h4>
-      </div>
-      <div class="row">
-        <div class="col s12" id="signup-error"></div>
-      </div>
-      <div class="row">
-        <form class="col s12" id="signup-form">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="signup-email" type="email" class="validate">
-              <label for="email">Email</label>
+              <div>
+                <a>Add</a>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="signup-password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <button type="submit" id="signup-submit" class="btn blue">Sign Up</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
+      </section>
     </div>
-    <div id="login-modal" class="modal">
-      <div class="modal-content">
-        <h4>Login</h4>
-      </div>
-      <div class="row">
-        <div class="col s12" id="login-error"></div>
-      </div>
-      <div class="row">
-        <form class="col s12" id="login-form">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="login-email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="login-password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <button type="submit" id="login-submit" class="btn blue">Login</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
+    <footer class="pa4 bg-near-black red">
+      <p>Footer content here</p>
+    </footer>
+  </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
   <script type="text/javascript" src="app.js"></script>

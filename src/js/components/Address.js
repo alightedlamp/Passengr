@@ -1,8 +1,6 @@
-// This component contains all the functionality required for the user to enter in
-// an address and save it to the application. This entails:
-// 1. An an address field for which Google will return autocomplete suggestions
-// 2. Making an API call to Google's Geocoding API to also store that address' lat/long values
-// 3. Storing the address in the user's localStorage to be used by the application
+import Map from './Map';
+
+const mapManager = new Map();
 
 export default class Address {
   saveAddress(addressString, label, isHome, isEdit, isEditIndex) {
@@ -41,7 +39,7 @@ export default class Address {
       .child(`${userManager.user.uid}`)
       .update({ addresses: mapManager.addresses });
   }
-  // Takes the result from the Google Maps Geocoder API and stores it in Firebase
+  // Takes the result from the Google mapManagers Geocoder API and stores it in Firebase
   storeAddress(object, placelabel, isHome) {
     // If the user has selected the "Home" checkbox, this is added to the BEGINNING of the array
     if (isHome) {

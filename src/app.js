@@ -15,15 +15,15 @@ const database = firebase.database();
 // Handle a new user logging in
 $('#signup-form').submit(function(e) {
   e.preventDefault();
-  userManager.email = $('#signup-email')
+  const email = $('#signup-email')
     .val()
     .trim();
-  userManager.password = $('#signup-password')
+  const pw = $('#signup-password')
     .val()
     .trim();
 
   // Validate input
-  if (userManager.validateEmail() && userManager.validatePassword()) {
+  if (userManager.validateEmail(email) && userManager.validatePassword(pw)) {
     userManager.createUser();
   }
 });

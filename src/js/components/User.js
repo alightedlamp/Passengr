@@ -1,4 +1,4 @@
-export default class Map {
+export default class User {
   constructor() {
     this.user = {};
   }
@@ -6,17 +6,15 @@ export default class Map {
     // Add user data to local state
     this.user = firebase.auth().currentUser;
   }
-  validateEmail() {
-    if (
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userManager.email)
-    ) {
+  validateEmail(email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       return true;
     } else {
       return false;
     }
   }
-  validatePassword() {
-    if (/^[A-Za-z]\w{7,14}$/.test(userManager.password)) {
+  validatePassword(pw) {
+    if (/^[A-Za-z]\w{7,14}$/.test(pw)) {
       return true;
     } else {
       return false;
